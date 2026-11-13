@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="NotesTree" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/NotesTree" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add library="X11" />
+					<Add library="xkbcommon" />
+					<Add library="asound" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/NotesTree" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add library="X11" />
+					<Add library="xkbcommon" />
+					<Add library="asound" />
+				</Linker>
+			</Target>
+			<Target title="ReleaseWin">
+				<Option output="bin/Release/NotesTree" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+					<Add option="-D_Windows" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+					<Add option="-static-libstdc++" />
+					<Add option="-static-libgcc" />
+					<Add option="-static" />
+					<Add library="C:/Windows/System32/ws2_32.dll" />
+					<Add library="C:/Windows/System32/gdi32.dll" />
+					<Add library="C:/Windows/System32/winmm.dll" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Unit filename="../Widgets/MessageResponseBox.cpp" />
+		<Unit filename="../Widgets/Widgets.cpp" />
+		<Unit filename="../Widgets/WidgetsDriverWin.cpp">
+			<Option target="ReleaseWin" />
+		</Unit>
+		<Unit filename="../Widgets/WidgetsDriverX.cpp">
+			<Option target="Debug" />
+			<Option target="Release" />
+		</Unit>
+		<Unit filename="../Widgets/WidgetsEdit.cpp" />
+		<Unit filename="../Widgets/WidgetsImageBMP.cpp" />
+		<Unit filename="../Widgets/WidgetsTextSTB.cpp" />
+		<Unit filename="../Widgets/WidgetsTree.cpp" />
+		<Unit filename="../Widgets/lib.cpp" />
+		<Unit filename="main.cpp" />
+		<Extensions />
+	</Project>
+</CodeBlocks_project_file>
